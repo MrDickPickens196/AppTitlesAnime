@@ -10,7 +10,7 @@ public partial class TitlesGenre
     public short IdGenre { get; set; }
 
     public int IdAnime { get; set; }
-
+    
     //навигационные свойства
     public virtual AnimeTitle AnimeTitle { get; set; } = null!;
 

@@ -9,12 +9,12 @@ public partial class DbAnimeTitlesContext : DbContext
     public DbAnimeTitlesContext()
     {
     }
-
+    
     public DbAnimeTitlesContext(DbContextOptions<DbAnimeTitlesContext> options)
         : base(options)
     {
     }
-
+  
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
 
     public virtual DbSet<Genre> Genres { get; set; }

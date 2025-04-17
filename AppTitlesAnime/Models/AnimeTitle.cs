@@ -6,7 +6,7 @@ namespace AppTitlesAnime.Models;
 public partial class AnimeTitle
 {
     public int Id { get; set; }
-
+    
     public short IdType { get; set; }
 
     public string OriginalName { get; set; } = null!;

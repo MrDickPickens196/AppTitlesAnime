@@ -12,7 +12,7 @@ public partial class TitlesStatus
     public int IdAnime { get; set; }
 
     public DateOnly? DateStatus { get; set; }
-
+    
 
     //навигационные свойства
     public virtual AnimeTitle AnimeTitle { get; set; } = null!;
