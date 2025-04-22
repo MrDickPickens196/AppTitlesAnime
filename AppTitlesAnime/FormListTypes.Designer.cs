@@ -49,7 +49,7 @@
             flowLayoutPanelTop.Dock = DockStyle.Top;
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
-            flowLayoutPanelTop.Size = new Size(1143, 35);
+            flowLayoutPanelTop.Size = new Size(934, 35);
             flowLayoutPanelTop.TabIndex = 0;
             flowLayoutPanelTop.Paint += flowLayoutPanel1_Paint;
             // 
@@ -86,13 +86,16 @@
             // 
             // dataGridViewTypes
             // 
+            dataGridViewTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTypes.BackgroundColor = Color.White;
             dataGridViewTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTypes.Dock = DockStyle.Fill;
             dataGridViewTypes.Location = new Point(10, 10);
+            dataGridViewTypes.MultiSelect = false;
             dataGridViewTypes.Name = "dataGridViewTypes";
             dataGridViewTypes.ReadOnly = true;
-            dataGridViewTypes.Size = new Size(1123, 515);
+            dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewTypes.Size = new Size(914, 456);
             dataGridViewTypes.TabIndex = 1;
             dataGridViewTypes.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -103,7 +106,7 @@
             panelFill.Location = new Point(0, 35);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(1143, 535);
+            panelFill.Size = new Size(934, 476);
             panelFill.TabIndex = 2;
             // 
             // FormListTypes
@@ -111,7 +114,7 @@
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1143, 570);
+            ClientSize = new Size(934, 511);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("SimSun-ExtB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
