@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanel1 = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
             panelFill = new Panel();
             textBoxTypeName = new TextBox();
             labelTypeName = new Label();
+            errorProvider = new ErrorProvider(components);
             flowLayoutPanel1.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -46,7 +49,7 @@
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.Location = new Point(0, 91);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(10);
+            flowLayoutPanel1.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanel1.Size = new Size(434, 55);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
@@ -54,20 +57,22 @@
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(88, 29);
-            btnSaveChanges.TabIndex = 2;
+            btnSaveChanges.TabIndex = 0;
             btnSaveChanges.Text = "Сохранить";
             btnSaveChanges.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(107, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 29);
-            btnCancel.TabIndex = 3;
+            btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -78,17 +83,19 @@
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
             panelFill.Size = new Size(434, 91);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxTypeName
             // 
             textBoxTypeName.Dock = DockStyle.Top;
             textBoxTypeName.Location = new Point(10, 29);
             textBoxTypeName.Name = "textBoxTypeName";
-            textBoxTypeName.Size = new Size(414, 26);
+            textBoxTypeName.Size = new Size(404, 26);
             textBoxTypeName.TabIndex = 1;
+            textBoxTypeName.TextChanged += TextBoxTypeName_TextChanged;
+            textBoxTypeName.Validating += TextBoxTypeName_Validating;
             // 
             // labelTypeName
             // 
@@ -99,6 +106,10 @@
             labelTypeName.Size = new Size(85, 19);
             labelTypeName.TabIndex = 0;
             labelTypeName.Text = "Тип аниме";
+            // 
+            // errorProvider
+            // 
+            errorProvider.ContainerControl = this;
             // 
             // FormAddType
             // 
@@ -117,6 +128,7 @@
             flowLayoutPanel1.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,7 +139,8 @@
         private Button btnSaveChanges;
         private Button btnCancel;
         private Panel panelFill;
-        private TextBox textBoxTypeName;
         private Label labelTypeName;
+        protected internal TextBox textBoxTypeName;
+        private ErrorProvider errorProvider;
     }
 }

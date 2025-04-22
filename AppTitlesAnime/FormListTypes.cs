@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
+using Type = AppTitlesAnime.Models.Type;
 
 namespace AppTitlesAnime
 {
@@ -57,8 +58,21 @@ namespace AppTitlesAnime
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddType formAddType = new FormAddType();  
-            formAddType.ShowDialog();   
+            FormAddType formAddType = new();
+            DialogResult result = formAddType.ShowDialog(this); 
+            
+            if(result == DialogResult.Cancel) 
+                return;
+
+            Type type = new Type();
+            type.TypeName = formAddType.textBoxTypeName.Text;
+
+            db.Types.Add(type);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
         }
     }
 }
