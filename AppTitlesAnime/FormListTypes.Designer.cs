@@ -42,21 +42,22 @@
             // flowLayoutPanelTop
             // 
             flowLayoutPanelTop.AutoSize = true;
-            flowLayoutPanelTop.BackColor = Color.White;
+            flowLayoutPanelTop.BackColor = Color.FromArgb(192, 192, 255);
             flowLayoutPanelTop.Controls.Add(btnAddType);
             flowLayoutPanelTop.Controls.Add(btnUpdateType);
             flowLayoutPanelTop.Controls.Add(btnDeleteType);
             flowLayoutPanelTop.Dock = DockStyle.Top;
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
-            flowLayoutPanelTop.Size = new Size(934, 35);
+            flowLayoutPanelTop.Padding = new Padding(10);
+            flowLayoutPanelTop.Size = new Size(934, 55);
             flowLayoutPanelTop.TabIndex = 0;
             flowLayoutPanelTop.Paint += flowLayoutPanel1_Paint;
             // 
             // btnAddType
             // 
             btnAddType.AutoSize = true;
-            btnAddType.Location = new Point(3, 3);
+            btnAddType.Location = new Point(13, 13);
             btnAddType.Name = "btnAddType";
             btnAddType.Size = new Size(83, 29);
             btnAddType.TabIndex = 0;
@@ -67,7 +68,7 @@
             // btnUpdateType
             // 
             btnUpdateType.AutoSize = true;
-            btnUpdateType.Location = new Point(92, 3);
+            btnUpdateType.Location = new Point(102, 13);
             btnUpdateType.Name = "btnUpdateType";
             btnUpdateType.Size = new Size(119, 29);
             btnUpdateType.TabIndex = 1;
@@ -78,7 +79,7 @@
             // btnDeleteType
             // 
             btnDeleteType.AutoSize = true;
-            btnDeleteType.Location = new Point(217, 3);
+            btnDeleteType.Location = new Point(227, 13);
             btnDeleteType.Name = "btnDeleteType";
             btnDeleteType.Size = new Size(75, 29);
             btnDeleteType.TabIndex = 2;
@@ -89,7 +90,7 @@
             // dataGridViewTypes
             // 
             dataGridViewTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewTypes.BackgroundColor = Color.White;
+            dataGridViewTypes.BackgroundColor = Color.FromArgb(192, 192, 255);
             dataGridViewTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTypes.Dock = DockStyle.Fill;
             dataGridViewTypes.Location = new Point(10, 10);
@@ -97,18 +98,19 @@
             dataGridViewTypes.Name = "dataGridViewTypes";
             dataGridViewTypes.ReadOnly = true;
             dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewTypes.Size = new Size(914, 456);
+            dataGridViewTypes.Size = new Size(914, 436);
             dataGridViewTypes.TabIndex = 1;
             dataGridViewTypes.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panelFill
             // 
+            panelFill.BackColor = Color.FromArgb(128, 128, 255);
             panelFill.Controls.Add(dataGridViewTypes);
             panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 35);
+            panelFill.Location = new Point(0, 55);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(934, 476);
+            panelFill.Size = new Size(934, 456);
             panelFill.TabIndex = 2;
             // 
             // FormListTypes

@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
+            btnShowGenres = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
             // 
             btnShowTypes.AutoSize = true;
-            btnShowTypes.BackColor = Color.FromArgb(255, 128, 0);
+            btnShowTypes.BackColor = Color.FromArgb(128, 128, 255);
             btnShowTypes.Location = new Point(12, 12);
             btnShowTypes.Name = "btnShowTypes";
             btnShowTypes.Size = new Size(269, 40);
@@ -43,12 +44,25 @@
             btnShowTypes.UseVisualStyleBackColor = false;
             btnShowTypes.Click += BtnShowTypes_Click;
             // 
+            // btnShowGenres
+            // 
+            btnShowGenres.AutoSize = true;
+            btnShowGenres.BackColor = Color.FromArgb(128, 128, 255);
+            btnShowGenres.Location = new Point(300, 12);
+            btnShowGenres.Name = "btnShowGenres";
+            btnShowGenres.Size = new Size(281, 40);
+            btnShowGenres.TabIndex = 1;
+            btnShowGenres.Text = "Отобразить список \"Жанры аниме\"";
+            btnShowGenres.UseVisualStyleBackColor = false;
+            btnShowGenres.Click += BtnShowGenres_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 192, 128);
+            BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1143, 592);
+            Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("SimSun-ExtB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
@@ -61,5 +75,6 @@
         #endregion
 
         private Button btnShowTypes;
+        private Button btnShowGenres;
     }
 }

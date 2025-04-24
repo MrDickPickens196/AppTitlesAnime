@@ -44,6 +44,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.BackColor = Color.FromArgb(128, 128, 255);
             flowLayoutPanel1.Controls.Add(btnSaveChanges);
             flowLayoutPanel1.Controls.Add(btnCancel);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
@@ -78,6 +79,7 @@
             // 
             // panelFill
             // 
+            panelFill.BackColor = Color.FromArgb(192, 192, 255);
             panelFill.Controls.Add(textBoxTypeName);
             panelFill.Controls.Add(labelTypeName);
             panelFill.Dock = DockStyle.Fill;
