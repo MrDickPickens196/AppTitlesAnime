@@ -50,7 +50,7 @@
             flowLayoutPanelTop.Location = new Point(0, 0);
             flowLayoutPanelTop.Name = "flowLayoutPanelTop";
             flowLayoutPanelTop.Padding = new Padding(10);
-            flowLayoutPanelTop.Size = new Size(923, 55);
+            flowLayoutPanelTop.Size = new Size(898, 55);
             flowLayoutPanelTop.TabIndex = 0;
             // 
             // btnAddGenre
@@ -88,13 +88,16 @@
             // 
             // dataGridViewGenres
             // 
+            dataGridViewGenres.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewGenres.BackgroundColor = Color.FromArgb(192, 192, 255);
             dataGridViewGenres.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGenres.Dock = DockStyle.Fill;
             dataGridViewGenres.Location = new Point(10, 10);
+            dataGridViewGenres.MultiSelect = false;
             dataGridViewGenres.Name = "dataGridViewGenres";
             dataGridViewGenres.ReadOnly = true;
-            dataGridViewGenres.Size = new Size(903, 440);
+            dataGridViewGenres.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewGenres.Size = new Size(878, 322);
             dataGridViewGenres.TabIndex = 1;
             // 
             // panelFill
@@ -105,7 +108,7 @@
             panelFill.Location = new Point(0, 55);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(923, 460);
+            panelFill.Size = new Size(898, 342);
             panelFill.TabIndex = 2;
             // 
             // FormListGenres
@@ -113,7 +116,7 @@
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(923, 515);
+            ClientSize = new Size(898, 397);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelTop);
             Font = new Font("SimSun-ExtB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
