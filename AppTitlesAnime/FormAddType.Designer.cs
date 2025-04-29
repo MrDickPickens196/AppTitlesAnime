@@ -53,7 +53,7 @@
             flowLayoutPanel1.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanel1.Size = new Size(434, 55);
             flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            flowLayoutPanel1.Paint += FlowLayoutPanel1_Paint;
             // 
             // btnSaveChanges
             // 

@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanelBottom = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
             panelFill = new Panel();
             textBoxGenre = new TextBox();
             labelGenre = new Label();
+            errorProviderGenre = new ErrorProvider(components);
             flowLayoutPanelBottom.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderGenre).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBottom
@@ -49,10 +52,12 @@
             flowLayoutPanelBottom.Padding = new Padding(10, 10, 20, 10);
             flowLayoutPanelBottom.Size = new Size(434, 60);
             flowLayoutPanelBottom.TabIndex = 1;
+            flowLayoutPanelBottom.Paint += flowLayoutPanelBottom_Paint;
             // 
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(88, 29);
@@ -63,6 +68,7 @@
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(107, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 29);
@@ -80,7 +86,7 @@
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
             panelFill.Size = new Size(434, 86);
-            panelFill.TabIndex = 2;
+            panelFill.TabIndex = 0;
             // 
             // textBoxGenre
             // 
@@ -89,6 +95,8 @@
             textBoxGenre.Name = "textBoxGenre";
             textBoxGenre.Size = new Size(414, 26);
             textBoxGenre.TabIndex = 1;
+            textBoxGenre.TextChanged += TextBoxGenre_TextChanged;
+            textBoxGenre.Validating += textBoxGenre_Validating_1;
             // 
             // labelGenre
             // 
@@ -99,6 +107,10 @@
             labelGenre.Size = new Size(97, 19);
             labelGenre.TabIndex = 0;
             labelGenre.Text = "Жанр аниме";
+            // 
+            // errorProviderGenre
+            // 
+            errorProviderGenre.ContainerControl = this;
             // 
             // FormAddGenre
             // 
@@ -115,6 +127,7 @@
             flowLayoutPanelBottom.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderGenre).EndInit();
             ResumeLayout(false);
         }
 
@@ -124,7 +137,8 @@
         private Panel panelFill;
         private Button btnSaveChanges;
         private Button btnCancel;
-        private TextBox textBoxGenre;
         private Label labelGenre;
+        protected internal TextBox textBoxGenre;
+        private ErrorProvider errorProviderGenre;
     }
 }

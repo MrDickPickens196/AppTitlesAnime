@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
+using Type = AppTitlesAnime.Models.Type;
 
 namespace AppTitlesAnime
 {
@@ -58,8 +59,21 @@ namespace AppTitlesAnime
 
         private void BtnAddGenre_Click(object sender, EventArgs e)
         {
-            FormAddGenre formAddGenre = new FormAddGenre(); 
-            formAddGenre.ShowDialog();
+            FormAddGenre formAddGenre = new();
+            DialogResult result = formAddGenre.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            Genre genre = new Genre();
+            genre.GenreName = formAddGenre.textBoxGenre.Text;
+
+            db.Genres.Add(genre);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
+
+            this.dataGridViewGenres.DataSource = this.db.Genres.Local.OrderBy(o => o.GenreName).ToList();
         }
     }
 }
