@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             flowLayoutPanelBottomStatus = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
-            labelStatus = new Label();
-            textBoxStatus = new TextBox();
+            TojeNet = new Label();
+            NetyTakogo = new TextBox();
             panelFill = new Panel();
-            textBoxGenre = new TextBox();
-            labelGenre = new Label();
+            textBoxStatus = new TextBox();
+            labelStatus = new Label();
+            errorProvider = new ErrorProvider(components);
             flowLayoutPanelBottomStatus.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelBottomStatus
@@ -57,6 +60,7 @@
             // btnSaveChanges
             // 
             btnSaveChanges.AutoSize = true;
+            btnSaveChanges.DialogResult = DialogResult.OK;
             btnSaveChanges.Location = new Point(13, 13);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(88, 29);
@@ -67,6 +71,7 @@
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.Location = new Point(107, 13);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 29);
@@ -74,51 +79,57 @@
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
             // 
+            // TojeNet
+            // 
+            TojeNet.AutoSize = true;
+            TojeNet.Location = new Point(10, 10);
+            TojeNet.Name = "TojeNet";
+            TojeNet.Size = new Size(105, 19);
+            TojeNet.TabIndex = 0;
+            TojeNet.Text = "Статус аниме";
+            // 
+            // NetyTakogo
+            // 
+            NetyTakogo.Location = new Point(13, 31);
+            NetyTakogo.Name = "NetyTakogo";
+            NetyTakogo.Size = new Size(100, 23);
+            NetyTakogo.TabIndex = 1;
+            // 
+            // panelFill
+            // 
+            panelFill.BackColor = Color.FromArgb(192, 192, 255);
+            panelFill.Controls.Add(textBoxStatus);
+            panelFill.Controls.Add(labelStatus);
+            panelFill.Dock = DockStyle.Fill;
+            panelFill.Location = new Point(0, 0);
+            panelFill.Name = "panelFill";
+            panelFill.Padding = new Padding(10);
+            panelFill.Size = new Size(366, 72);
+            panelFill.TabIndex = 0;
+            // 
+            // textBoxStatus
+            // 
+            textBoxStatus.Dock = DockStyle.Top;
+            textBoxStatus.Location = new Point(10, 29);
+            textBoxStatus.Name = "textBoxStatus";
+            textBoxStatus.Size = new Size(346, 26);
+            textBoxStatus.TabIndex = 1;
+            textBoxStatus.TextChanged += textBoxStatus_TextChanged;
+            textBoxStatus.Validating += TextBoxStatus_Validating;
+            // 
             // labelStatus
             // 
             labelStatus.AutoSize = true;
+            labelStatus.Dock = DockStyle.Top;
             labelStatus.Location = new Point(10, 10);
             labelStatus.Name = "labelStatus";
             labelStatus.Size = new Size(105, 19);
             labelStatus.TabIndex = 0;
             labelStatus.Text = "Статус аниме";
             // 
-            // textBoxStatus
+            // errorProvider
             // 
-            textBoxStatus.Location = new Point(13, 31);
-            textBoxStatus.Name = "textBoxStatus";
-            textBoxStatus.Size = new Size(100, 23);
-            textBoxStatus.TabIndex = 1;
-            // 
-            // panelFill
-            // 
-            panelFill.BackColor = Color.FromArgb(192, 192, 255);
-            panelFill.Controls.Add(textBoxGenre);
-            panelFill.Controls.Add(labelGenre);
-            panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 0);
-            panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(366, 72);
-            panelFill.TabIndex = 2;
-            // 
-            // textBoxGenre
-            // 
-            textBoxGenre.Dock = DockStyle.Top;
-            textBoxGenre.Location = new Point(10, 29);
-            textBoxGenre.Name = "textBoxGenre";
-            textBoxGenre.Size = new Size(346, 26);
-            textBoxGenre.TabIndex = 1;
-            // 
-            // labelGenre
-            // 
-            labelGenre.AutoSize = true;
-            labelGenre.Dock = DockStyle.Top;
-            labelGenre.Location = new Point(10, 10);
-            labelGenre.Name = "labelGenre";
-            labelGenre.Size = new Size(105, 19);
-            labelGenre.TabIndex = 0;
-            labelGenre.Text = "Статус аниме";
+            errorProvider.ContainerControl = this;
             // 
             // FormAddStatus
             // 
@@ -130,11 +141,12 @@
             Font = new Font("SimSun-ExtB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "FormAddStatus";
-            Text = "FormAddStatus";
+            Text = "Информация о статусе аниме";
             flowLayoutPanelBottomStatus.ResumeLayout(false);
             flowLayoutPanelBottomStatus.PerformLayout();
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,12 +154,13 @@
         #endregion
         private FlowLayoutPanel flowLayoutPanelBottomStatus;
         private Panel panelFillStatus;
-        private Button btnCancel;
         private Button btnSaveChanges;
-        private Label labelStatus;
-        private TextBox textBoxStatus;
+        private Label TojeNet;
+        private TextBox NetyTakogo;
         private Panel panelFill;
-        protected internal TextBox textBoxGenre;
-        private Label labelGenre;
+        protected internal TextBox textBoxStatus;
+        private Label labelStatus;
+        private Button btnCancel;
+        private ErrorProvider errorProvider;
     }
 }
