@@ -14,7 +14,7 @@ public partial class AppContext : DbContext
         : base(options)
     {
     }
-  
+    //созданы свойства, подключение к таблицам
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
 
     public virtual DbSet<Genre> Genres { get; set; }

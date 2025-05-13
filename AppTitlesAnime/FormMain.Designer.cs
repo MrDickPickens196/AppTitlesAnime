@@ -30,6 +30,8 @@
         {
             btnShowTypes = new Button();
             btnShowGenres = new Button();
+            btnShowStatus = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -48,7 +50,7 @@
             // 
             btnShowGenres.AutoSize = true;
             btnShowGenres.BackColor = Color.FromArgb(128, 128, 255);
-            btnShowGenres.Location = new Point(300, 12);
+            btnShowGenres.Location = new Point(416, 12);
             btnShowGenres.Name = "btnShowGenres";
             btnShowGenres.Size = new Size(281, 40);
             btnShowGenres.TabIndex = 1;
@@ -56,12 +58,25 @@
             btnShowGenres.UseVisualStyleBackColor = false;
             btnShowGenres.Click += BtnShowGenres_Click;
             // 
+            // btnShowStatus
+            // 
+            btnShowStatus.AutoSize = true;
+            btnShowStatus.BackColor = Color.FromArgb(128, 128, 255);
+            btnShowStatus.Location = new Point(830, 12);
+            btnShowStatus.Name = "btnShowStatus";
+            btnShowStatus.Size = new Size(301, 40);
+            btnShowStatus.TabIndex = 2;
+            btnShowStatus.Text = "Отобразить список \"Статусы аниме\"";
+            btnShowStatus.UseVisualStyleBackColor = false;
+            btnShowStatus.Click += BtnShowStatus_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
             ClientSize = new Size(1143, 592);
+            Controls.Add(btnShowStatus);
             Controls.Add(btnShowGenres);
             Controls.Add(btnShowTypes);
             Font = new Font("SimSun-ExtB", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -76,5 +91,7 @@
 
         private Button btnShowTypes;
         private Button btnShowGenres;
+        private Button btnShowStatus;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

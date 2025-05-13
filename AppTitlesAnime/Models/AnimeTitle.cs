@@ -26,8 +26,11 @@ public partial class AnimeTitle
 
     //навигационные свойства
     public virtual Type Type { get; set; } = null!;
+    //у одного аниме может быть один тип
 
     public virtual ICollection<TitlesGenre> TitlesGenres { get; set; } = new List<TitlesGenre>();
+    //у одного аниме может быть несколько жанров
 
     public virtual ICollection<TitlesStatus> TitlesStatuses { get; set; } = new List<TitlesStatus>();
+    //у одного аниме может быть несколько статусов
 }
