@@ -27,7 +27,7 @@ namespace AppTitlesAnime
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.Statuses.Load();
-            this.dataGridViewStatus.DataSource = this.db.Statuses.Local.OrderBy(o=>o.StatusName).ToList();
+            this.dataGridViewStatus.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
 
             //скрытие столбцов 
             dataGridViewStatus.Columns["Id"].Visible = false;
@@ -51,7 +51,7 @@ namespace AppTitlesAnime
             FormAddStatus formAddStatus = new();
             DialogResult result = formAddStatus.ShowDialog(this);
 
-            if (result == DialogResult.Cancel) 
+            if (result == DialogResult.Cancel)
                 return;
 
             Status status = new Status();
@@ -61,6 +61,35 @@ namespace AppTitlesAnime
             db.SaveChanges();
 
             MessageBox.Show("Новый объект добавлен");
+            this.dataGridViewStatus.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
+        }
+
+        private void BtnUpdateStatus_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewStatus.SelectedRows.Count == 0)
+                return;
+
+            int index = dataGridViewStatus.SelectedRows[0].Index;
+            short id = 0;
+            bool converted = Int16.TryParse(dataGridViewStatus[0, index].Value.ToString(), out id);
+            if (!converted)
+                return;
+
+            Status status = db.Statuses.Find(id);
+            FormAddStatus formAddStatus = new();
+            formAddStatus.textBoxStatus.Text = status.StatusName;
+
+            DialogResult result = formAddStatus.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            status.StatusName = formAddStatus.textBoxStatus.Text;
+            db.Statuses.Update(status);
+            db.SaveChanges();
+
+            MessageBox.Show("Объект изменен");
+
             this.dataGridViewStatus.DataSource = this.db.Statuses.Local.OrderBy(o => o.StatusName).ToList();
         }
     }
