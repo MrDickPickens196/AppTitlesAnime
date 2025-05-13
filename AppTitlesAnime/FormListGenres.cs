@@ -68,7 +68,7 @@ namespace AppTitlesAnime
                 return;
 
             genre.GenreName = formAddGenre.textBoxGenre.Text;
-            db.Genres.Add(genre);
+            db.Genres.Update(genre);
             db.SaveChanges();
 
             MessageBox.Show("Объект изменен");
