@@ -4,32 +4,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppTitlesAnime.Models;
 
+// Контекст базы данных для приложения, основанный на Entity Framework Core
 public partial class AppContext : DbContext
 {
+    // Конструктор без параметров - используется для создания контекста с настройками по умолчанию
     public AppContext()
     {
     }
-    
+    // Конструктор с параметрами - принимает настройки конфигурации и передает их базовому классу DbContext
     public AppContext(DbContextOptions<AppContext> options)
         : base(options)
     {
     }
-    //созданы свойства, подключение к таблицам
+    // Таблица "AnimeTitles" - хранит данные об аниме
+    //DbSet это класс, который представляет собой коллекцию сущностей, которые могут быть добавлены, удалены или изменены в базе данных
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
-
+    // Таблица "Genres" - хранит данные о жанрах
     public virtual DbSet<Genre> Genres { get; set; }
-
+    // Таблица "Statuses" - хранит данные о статусах
     public virtual DbSet<Status> Statuses { get; set; }
-
+    // Таблица "TitlesGenres" - связь между аниме и жанрами
     public virtual DbSet<TitlesGenre> TitlesGenres { get; set; }
-
+    // Таблица "TitlesStatuses" - связь между аниме и статусами
     public virtual DbSet<TitlesStatus> TitlesStatuses { get; set; }
-
+    // Таблица "Types" - хранит данные о типах аниме
     public virtual DbSet<Type> Types { get; set; }
-
+    // Метод конфигурации контекста базы данных
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // Настройка использования базы данных PostgreSQL с указанной строкой подключения
         => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=db_anime_titles;Username=postgres;Password=1111");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AnimeTitle>(entity =>

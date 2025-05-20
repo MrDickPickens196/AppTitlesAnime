@@ -32,8 +32,6 @@
             flowLayoutPanelBottomStatus = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
-            TojeNet = new Label();
-            NetyTakogo = new TextBox();
             panelFill = new Panel();
             textBoxStatus = new TextBox();
             labelStatus = new Label();
@@ -78,22 +76,6 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // TojeNet
-            // 
-            TojeNet.AutoSize = true;
-            TojeNet.Location = new Point(10, 10);
-            TojeNet.Name = "TojeNet";
-            TojeNet.Size = new Size(105, 19);
-            TojeNet.TabIndex = 0;
-            TojeNet.Text = "Статус аниме";
-            // 
-            // NetyTakogo
-            // 
-            NetyTakogo.Location = new Point(13, 31);
-            NetyTakogo.Name = "NetyTakogo";
-            NetyTakogo.Size = new Size(100, 23);
-            NetyTakogo.TabIndex = 1;
             // 
             // panelFill
             // 
@@ -153,10 +135,7 @@
 
         #endregion
         private FlowLayoutPanel flowLayoutPanelBottomStatus;
-        private Panel panelFillStatus;
         private Button btnSaveChanges;
-        private Label TojeNet;
-        private TextBox NetyTakogo;
         private Panel panelFill;
         protected internal TextBox textBoxStatus;
         private Label labelStatus;

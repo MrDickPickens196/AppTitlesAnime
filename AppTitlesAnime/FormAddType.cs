@@ -30,8 +30,6 @@ namespace AppTitlesAnime // Определение пространства им
         {
             // Здесь можно добавить код для кастомизации рисования панели
         }
-
-        private List<string> existingTypes = new List<string>();
         // Обработчик события валидации текстового поля для имени типа
         // Validating, которое срабатывает при вводе пользователя и призвано управлять валидацией вода
         // В обработчике события Validating мы смотрим на введенный текст
@@ -42,12 +40,6 @@ namespace AppTitlesAnime // Определение пространства им
             {
                 // Установка сообщения об ошибке, если поле пустое
                 errorProvider.SetError(textBoxTypeName, "Поле не может быть пустым");
-                btnSaveChanges.Enabled = false; // Отключение кнопки сохранения изменений
-            }
-            else if (existingTypes.Contains(textBoxTypeName.Text))
-            {
-                // Установка сообщения об ошибке, если значение уже существует
-                errorProvider.SetError(textBoxTypeName, "Значение уже существует");
                 btnSaveChanges.Enabled = false; // Отключение кнопки сохранения изменений
             }
             else
@@ -68,12 +60,6 @@ namespace AppTitlesAnime // Определение пространства им
             {
                 // Установка сообщения об ошибке, если поле пустое
                 errorProvider.SetError(textBoxTypeName, "Поле не может быть пустым");
-                btnSaveChanges.Enabled = false; // Отключение кнопки сохранения изменений
-            }
-            else if (existingTypes.Contains(textBoxTypeName.Text))
-            {
-                // Установка сообщения об ошибке, если значение уже существует
-                errorProvider.SetError(textBoxTypeName, "Значение уже существует");
                 btnSaveChanges.Enabled = false; // Отключение кнопки сохранения изменений
             }
             else
